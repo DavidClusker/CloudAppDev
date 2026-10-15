@@ -18,6 +18,12 @@ jobs:
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v4
 
+      - name: Show files for debugging
+        run: |
+          pwd
+          ls -la
+          ls -la terraform || true
+
       - name: Terraform Init
         working-directory: ./terraform
         run: terraform init
