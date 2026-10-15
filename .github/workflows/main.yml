@@ -11,8 +11,20 @@ on:
 jobs:
   terraform:
     runs-on: ubuntu-latest
+    
 
     steps:
+      - name: Debug Terraform directory
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Repository contents:"
+          ls -la
+          echo "Terraform directory contents:"
+          ls -la ./terraform
+          echo "Tracked Terraform files:"
+          git ls-files '*.tf'
+          
       - name: Checkout code
         uses: actions/checkout@v7
 
